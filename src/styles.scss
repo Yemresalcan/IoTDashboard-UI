@@ -1,0 +1,236 @@
+/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$primary-palette: mat.define-palette(mat.$blue-palette);
+$accent-palette: mat.define-palette(mat.$amber-palette);
+$warn-palette: mat.define-palette(mat.$red-palette);
+
+// Light tema
+$light-theme: mat.define-light-theme((
+  color: (
+    primary: $primary-palette,
+    accent: $accent-palette,
+    warn: $warn-palette
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+// Dark tema
+$dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $primary-palette,
+    accent: $accent-palette,
+    warn: $warn-palette
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+// Varsayılan olarak light tema
+@include mat.all-component-themes($light-theme);
+
+// Dark tema class'ı eklendiğinde
+.dark-theme {
+  @include mat.all-component-colors($dark-theme);
+  
+  // Özel dark tema stilleri
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+
+  .app-content {
+    background-color: #1a1a1a !important;
+  }
+
+  .app-header {
+    background: #2d2d2d !important;
+    color: #ffffff !important;
+  }
+
+  .card {
+    background: #2d2d2d !important;
+    border-color: #404040 !important;
+  }
+
+  .mat-mdc-card {
+    background: #2d2d2d !important;
+    color: #ffffff !important;
+  }
+
+  .mat-mdc-menu-panel {
+    background: #2d2d2d !important;
+  }
+
+  .mat-mdc-menu-item {
+    color: #ffffff !important;
+
+    &:hover {
+      background: #3d3d3d !important;
+    }
+  }
+
+  .mat-mdc-dialog-container {
+    background: #2d2d2d !important;
+    color: #ffffff !important;
+  }
+
+  // Snackbar dark tema
+  .mdc-snackbar__surface {
+    background: #1a1a1a !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .error-snackbar {
+    background: #1a0000 !important;
+    color: #ff6b6b !important;
+    .mat-mdc-button {
+      color: #ff6b6b !important;
+    }
+  }
+
+  .success-snackbar {
+    background: #001a0e !important;
+    color: #4ade80 !important;
+    .mat-mdc-button {
+      color: #4ade80 !important;
+    }
+  }
+
+  .info-snackbar {
+    background: #001a33 !important;
+    color: #60a5fa !important;
+    .mat-mdc-button {
+      color: #60a5fa !important;
+    }
+  }
+
+  .logo span {
+    color: #ffffff;
+  }
+
+  .main-nav a {
+    color: #b3b3b3;
+    
+    &:hover {
+      background: #3d3d3d;
+      color: #ffffff;
+    }
+    
+    &.active {
+      background: #4d4d4d;
+      color: #ffffff;
+    }
+  }
+
+  .notification-item {
+    background: #2d2d2d;
+    border-color: #404040;
+  }
+
+  .sensor-card {
+    background: #2d2d2d;
+  }
+
+  .status-indicator {
+    background: #2d2d2d;
+  }
+
+  .theme-toggle,
+  .notifications {
+    color: #b3b3b3;
+  }
+
+  .user-info {
+    color: #ffffff;
+    
+    &:hover {
+      background: #3d3d3d;
+    }
+  }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: #f5f7fa;
+  transition: background-color 0.3s ease;
+
+  &.dark-theme {
+    background-color: #1a1a1a;
+  }
+}
+
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.flex-item {
+  flex: 1;
+  min-width: 300px;
+}
+
+.error-snackbar {
+  background: #1a0000 !important;
+  color: #ff6b6b !important;
+  
+  .mat-simple-snackbar-action {
+    color: #ff6b6b !important;
+  }
+}
+
+.success-snackbar {
+  background: #000000 !important;
+  color: #4ade80 !important;
+  
+  .mat-simple-snackbar-action {
+    color: #4ade80 !important;
+  }
+}
+
+.info-snackbar {
+  background: #001a33 !important;
+  color: #60a5fa !important;
+  
+  .mat-simple-snackbar-action {
+    color: #60a5fa !important;
+  }
+}
+
+.mdc-snackbar__surface {
+  background: none !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+  border-radius: 8px !important;
+}
+
+.mat-mdc-snack-bar-container {
+  --mdc-snackbar-container-color: transparent !important;
+  
+  .mdc-snackbar__label {
+    font-weight: 500 !important;
+  }
+  
+  .mat-mdc-button {
+    font-weight: 600 !important;
+  }
+}
