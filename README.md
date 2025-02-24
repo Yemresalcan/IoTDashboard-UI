@@ -14,7 +14,7 @@ Bu proje, IoT cihazlarından gelen verileri görselleştirmek ve yönetmek için
 
 ## Teknolojiler
 
-- Angular 15
+- Angular 15+
 - Angular Material
 - Chart.js
 - SignalR (gerçek zamanlı veri iletişimi için)
